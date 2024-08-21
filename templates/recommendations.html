@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/card.css">
+  <title>Recommended Movies</title>
+</head>
+<body>
+<h1>Recommended Movies</h1>
+  <div class="movie-container">
+
+    {% for i in range(movie_names|length) %}
+      <div class="movie-card">
+        <img src="{{movie_posters[i]}}" alt="{{ movie_names[i] }}">
+          <div class="movie-info">
+
+          <h2>{{ movie_names[i] }}</h2>
+          <p> Tagline : {{ movie_tagline[i] }}</p>
+        <p> Release_Date : {{ movie_release_date[i] }}</p>
+        <p>Popularity : {{ movie_popularity[i] }}</p>
+
+        <p>Revenue : {{ movie_revenue[i] }}</p>
+        <p>Budget : {{ movie_budget[i] }}</p>
+          </div>
+      </div>
+    {% endfor %}
+  </div>
+</body>
+</html>
